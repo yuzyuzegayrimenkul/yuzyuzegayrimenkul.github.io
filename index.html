@@ -3,86 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yüz Yüze Gayrimenkul</title>
+  <title>Yüz Yüze Gayrimenkul - Eskişehir Tepebaşı</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      background: #f7f9fc;
+      color: #222;
+      line-height: 1.6;
     }
     header {
       background-color: #004080;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
-    section {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 25px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
     h2 {
       color: #004080;
-      margin-top: 40px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-weight: 600;
+      color: #004080;
+    }
+    ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .contact-info p, .contact-info a {
+      margin: 6px 0;
+      color: #004080;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
     }
     footer {
       background-color: #004080;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9rem;
     }
-    a {
-      color: #004080;
+    /* WhatsApp Butonu Stili */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       text-decoration: none;
+      z-index: 1000;
     }
-    a:hover {
-      text-decoration: underline;
+    .whatsapp-button svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Yüz Yüze Gayrimenkul</h1>
-    <p>Eskişehir Tepebaşı bölgesinde güvenilir gayrimenkul danışmanınız</p>
+    <h1>📍 YÜZ YÜZE GAYRİMENKUL</h1>
+    <p>Eskişehir Tepebaşı’nda Yatırıma Açılan Kapınız</p>
   </header>
 
-  <section>
-    <h2>Hakkımızda</h2>
-    <p>Yüz Yüze Gayrimenkul olarak Eskişehir Tepebaşı bölgesinde yatırım, satış ve kiralama hizmetleri sunmaktayız. Güven, şeffaflık ve memnuniyet odaklı çalışırız.</p>
+  <main>
+    <h2>Kuruluş Tarihi ve Hizmet Bölgesi</h2>
+    <p>Kuruluş Tarihi: 09.09.2021<br />Hizmet Bölgesi: Eskişehir / Tepebaşı</p>
 
-    <h2>Hizmetlerimiz</h2>
+    <h2>Hizmet Alanları</h2>
     <ul>
-      <li>Satılık ve Kiralık Konut</li>
-      <li>Arsa ve Ticari Gayrimenkul</li>
-      <li>Yatırım Danışmanlığı</li>
+      <li>Konut Satışı, Kiralama</li>
+      <li>Arsa ve Tarla Yatırımları</li>
     </ul>
 
-    <h2>İletişim</h2>
-    <p><strong>Adres:</strong> Sütlüce Mh. İstiklal Cd. No:48 Eskişehir, Tepebaşı</p>
-    <p><strong>Telefon:</strong> 0545 530 26 00</p>
-    <p><strong>E-posta:</strong> yuzyuzegayrimenkul@gmail.com</p>
-    <p><a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" target="_blank" rel="noopener noreferrer">Google Haritalar'da Gör</a></p>
-  </section>
+    <h2>Hakkımızda</h2>
+    <p>YÜZ YÜZE GAYRİMENKUL, 2021 yılında Eskişehir Tepebaşı’nda kurulmuş, kurulduğu günden bu yana dürüstlük, şeffaflık ve yüz yüze iletişim prensiplerinden ödün vermeden faaliyet göstermektedir.</p>
+    <p>Amacımız yalnızca bir taşınmaz satmak ya da kiralamak değil; doğru insanları, doğru yatırımlarla buluşturmak. Her evin bir yuva, her arsanın bir gelecek olduğuna inanıyor, müşterilerimizin hayallerini kendi hedefimiz gibi görüyoruz.</p>
+
+    <h2>Neden YÜZ YÜZE?</h2>
+    <ul>
+      <li>Tepebaşı bölgesinde uzmanlık</li>
+      <li>Arsa ve tarla yatırımlarında kârlı fırsatlar</li>
+      <li>Kiralık ve satılık portföyde geniş yelpaze</li>
+      <li>Samimi, yüz yüze ve güvene dayalı hizmet</li>
+      <li>Profesyonel danışmanlık, çözüm odaklı yaklaşım</li>
+    </ul>
+
+    <p>İster ev sahibi olmak isteyin, ister yatırım yapmak… Hayalinizdeki gayrimenkule birlikte ulaşalım!</p>
+
+    <section class="contact-info">
+      <h2>📞 İletişim</h2>
+      <p>📍 Sütlüce Mh İstiklal Cd 48 Eskişehir / Tepebaşı</p>
+      <p>📱 Telefon: 0545 530 26 00</p>
+      <p>📧 Mail: <a href="mailto:yuzyuzegayrimenkul@gmail.com">yuzyuzegayrimenkul@gmail.com</a></p>
+      <p>📷 Instagram: <a href="https://instagram.com/serkan_gecher" target="_blank" rel="noopener noreferrer">@serkan_gecher</a></p>
+      <p>📘 Facebook: <a href="https://facebook.com/YuzYuzeGayrimenkul26" target="_blank" rel="noopener noreferrer">@YuzYuzeGayrimenkul26</a></p>
+      <p><a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" target="_blank" rel="noopener noreferrer">Google Haritalar'da Gör</a></p>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Yüz Yüze Gayrimenkul. Tüm hakları saklıdır.</p>
   </footer>
 
   <!-- WhatsApp Butonu -->
-  <a href="https://wa.me/905455302600" target="_blank" 
-     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; 
-            color: white; border-radius: 50%; width: 60px; height: 60px; 
-            display: flex; align-items: center; justify-content: center; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
+  <a href="https://wa.me/905455302600" target="_blank" class="whatsapp-button" aria-label="WhatsApp ile iletişime geç">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M20.52 3.48a11.933 11.933 0 0 0-17.04 0 11.933 11.933 0 0 0 0 17.04l-1.84 5.36 5.52-1.52a11.933 11.933 0 0 0 5.52 1.28c6.62 0 12-5.38 12-12a11.933 11.933 0 0 0-5.6-10.6zm-7.04 15.52c-1.12 0-2.22-.3-3.2-.9l-.22-.12-3.04.84.84-3.04-.12-.22c-.6-.98-.9-2.08-.9-3.2 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8zm4.14-3.88c-.22-.12-1.3-.64-1.5-.72-.2-.08-.34-.12-.48.12-.12.22-.48.72-.6.86-.12.14-.24.16-.46.06-.22-.12-.92-.34-1.76-1.08-.65-.58-1.08-1.3-1.2-1.52-.12-.22-.01-.34.1-.46.1-.1.22-.24.34-.36.12-.12.16-.22.24-.36.08-.12.04-.24-.02-.36-.06-.12-.48-1.16-.66-1.58-.18-.42-.36-.36-.48-.36-.12 0-.26 0-.4 0-.14 0-.36.06-.56.28-.2.22-.76.74-.76 1.8 0 1.06.78 2.08.88 2.22.1.14 1.52 2.3 3.68 3.22 2.56 1.12 2.56.74 3.02.68.14 0 .88-.36 1-.7.12-.34.12-.62.08-.7-.04-.08-.2-.12-.42-.24z"/>
     </svg>
   </a>
 
 </body>
 </html>
-
