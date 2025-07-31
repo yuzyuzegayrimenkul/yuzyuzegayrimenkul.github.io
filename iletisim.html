@@ -3,111 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>İletişim | Yüz Yüze Gayrimenkul</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #ffd700;
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-    }
-    nav {
-      background-color: #222;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: #ffd700;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    nav a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-    main {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    button {
-      margin-top: 20px;
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background-color: #1ebe5d;
-    }
-  </style>
+  <title>İletişim</title>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="blog.html">Blog</a>
-    <a href="iletisim.html">İletişim</a>
-    <a href="veri.html">İlanlarımız (Canlı Veri)</a>
-  </nav>
-
-  <main>
-    <h1>İletişim</h1>
-
-    <form id="contactForm">
-      <label for="name">İsim</label>
-      <input type="text" id="name" name="name" placeholder="Adınız" required />
-
-      <label for="phone">Telefon</label>
-      <input type="tel" id="phone" name="phone" placeholder="05xx xxx xx xx" required pattern="[0-9\s\-\+]{10,15}" />
-
-      <label for="message">Açıklama</label>
-      <textarea id="message" name="message" placeholder="Mesajınız..." required></textarea>
-
-      <button type="submit">Gönder</button>
-    </form>
-  </main>
+  <h1>İletişim Formu Test</h1>
+  <form id="contactForm">
+    <label>İsim: <input type="text" id="name" required /></label><br /><br />
+    <label>Telefon: <input type="tel" id="phone" required /></label><br /><br />
+    <label>Açıklama:<br />
+      <textarea id="message" required></textarea>
+    </label><br /><br />
+    <button type="submit">Gönder</button>
+  </form>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       const name = encodeURIComponent(document.getElementById('name').value.trim());
       const phone = encodeURIComponent(document.getElementById('phone').value.trim());
       const message = encodeURIComponent(document.getElementById('message').value.trim());
-
-      const whatsappNumber = '905455302600'; // Kendi WhatsApp numaranı burada kullan
-
+      const whatsappNumber = '905455302600';
       const text = `Merhaba,%0Aİsim: ${name}%0ATelefon: ${phone}%0AMesaj: ${message}`;
-
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${text}`;
-
       window.open(whatsappURL, '_blank');
     });
   </script>
