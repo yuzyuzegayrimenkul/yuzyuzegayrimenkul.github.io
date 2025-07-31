@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Yüz Yüze Gayrimenkul Portföy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Filtrelenebilir İlanlar</title>
+  <style>body{font-family:Arial,sans-serif;margin:0;padding:20px;}table{width:100%;border-collapse:collapse;margin-top:20px;}th,td{border:1px solid#ccc;padding:8px;text-align:left;}th{background:#ffd700;}tr:nth-child(even){background:#f9f9f9;}tr:hover{background:#ececec;}input,select{padding:4px;margin:5px;}</style>
 </head>
 <body>
-  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vReweu6HCpQYLq_pGbb-S513G4YYBNGxXJzvX_7AQ2fj5Sujor7hr9twCjfip0pgA/pubhtml?widget=true&amp;headers=false"></iframe>
+  <h2>Filtrelenebilir İlan Tablosu</h2>
+  <label>Mahalle:<input type="text" id="mahalle" onkeyup="filter();"></label>
+  <label>Oda:<input type="text" id="oda" onkeyup="filter();"></label>
+  <label>Durum:<select id="durum" onchange="filter()"><option value="">Tümü</option><option>Satılık</option><option>Kiralık</option></select></label>
+  <label>Maks Fiyat:<input type="number" id="fiyat" onkeyup="filter();"></label>
+  <table id="tablo"><thead><tr><th>Mahalle</th><th>Oda</th><th>Durum</th><th>Fiyat</th><th>Link</th></tr></thead><tbody>
+    <!-- Örnek Satırlar -->
+    <tr><td>Batıkent</td><td>2+1</td><td>Satılık</td><td>2500000</td><td><a href="https://www.emlakjet.com/ilan/12345" target="_blank">İlana Git</a></td></tr>
+    <tr><td>Sütlüce</td><td>1+1</td><td>Kiralık</td><td>11000</td><td><a href="https://www.emlakjet.com/ilan/23456" target="_blank">İlana Git</a></td></tr>
+    <tr><td>Şirintepe</td><td>3+1</td><td>Satılık</td><td>3300000</td><td><a href="https://www.emlakjet.com/ilan/98765" target="_blank">İlana Git</a></td></tr>
+  </tbody></table>
+<script>
+function filter(){
+  const m=document.getElementById("mahalle").value.toLowerCase(),
+        o=document.getElementById("oda").value.toLowerCase(),
+        d=document.getElementById("durum").value.toLowerCase(),
+        f=+document.getElementById("fiyat").value||Infinity;
+  document.querySelectorAll("#tablo tbody tr").forEach(row=>{
+    const [ma,od,du,fi]=[...row.children].slice(0,4).map(td=>td.textContent.toLowerCase());
+    const fiyat=parseInt(fi)||0;
+    row.style.display=(ma.includes(m)&&od.includes(o)&&du.includes(d)&&fiyat<=f)?"":"none";
+  });
+}
+</script>
 </body>
 </html>
