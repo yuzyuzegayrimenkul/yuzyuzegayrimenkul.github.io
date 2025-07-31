@@ -43,7 +43,6 @@
       background-color: #111;
       text-align: center;
       padding: 40px 20px;
-      position: relative;
     }
     header h1 {
       font-size: 36px;
@@ -53,8 +52,6 @@
       font-size: 18px;
       color: #fff;
     }
-
-    /* Menü ve hamburger */
     nav {
       background-color: #222;
       text-align: center;
@@ -72,66 +69,6 @@
       color: #fff;
       text-decoration: underline;
     }
-
-    /* Hamburger Menü Butonu */
-    .menu-toggle {
-      display: none;
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-      width: 30px;
-      height: 25px;
-      justify-content: center;
-      z-index: 1100;
-    }
-    .menu-toggle span {
-      display: block;
-      height: 3px;
-      background-color: #ffd700;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    /* Hamburger Menü açıkken animasyon */
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    /* Mobil menü gizle/göster */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #222;
-        position: absolute;
-        width: 100%;
-        top: 100%;
-        left: 0;
-        padding: 10px 0;
-        z-index: 1000;
-      }
-      nav.active {
-        display: flex;
-      }
-      nav a {
-        margin: 10px 0;
-        font-size: 20px;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -215,25 +152,70 @@
       border: none;
       margin-top: 20px;
     }
+
+    /* Mobil Hamburger Menü CSS Başlangıç */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        position: fixed;
+        top: 80px; /* header yüksekliğine göre ayarla */
+        left: 0;
+        right: 0;
+        padding: 1rem 0;
+        z-index: 9999;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+      }
+      nav.active {
+        display: flex;
+      }
+      nav a {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      .menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 10000;
+        flex-direction: column;
+        gap: 6px;
+        width: 30px;
+        height: 25px;
+        justify-content: center;
+      }
+      .menu-toggle span {
+        height: 3px;
+        background-color: #ffd700;
+        border-radius: 3px;
+      }
+    }
+    /* Mobil Hamburger Menü CSS Bitiş */
   </style>
 </head>
 <body>
   <header>
     <h1>YÜZ YÜZE GAYRİMENKUL</h1>
     <p>Eskişehir Tepebaşı'nda Yatırıma Açılan Kapınız</p>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
   </header>
 
+  <!-- Menü Başlangıcı -->
+  <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menüyü aç/kapat" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <nav id="nav-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="blog.html">Blog</a>
     <a href="iletisim.html">İletişim</a>
     <a href="veri.html">İlanlarımız (Canlı Veri)</a>
   </nav>
+  <!-- Menü Bitişi -->
 
   <main>
     <section>
@@ -305,21 +287,15 @@
   </a>
 
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
-
-    // Klavyeden Enter veya Boşluk tuşları ile de menüyü aç/kapat yapabilmek için:
-    menuToggle.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        menuToggle.click();
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+      if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';  // sayfa kaydırmayı engelle
+      } else {
+        document.body.style.overflow = '';
       }
-    });
+    }
   </script>
 </body>
 </html>
