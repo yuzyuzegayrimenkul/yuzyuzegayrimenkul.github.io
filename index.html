@@ -1,96 +1,325 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yüz Yüze Gayrimenkul</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Eskişehir Tepebaşı Gayrimenkul | Yüz Yüze Gayrimenkul</title>
+  
+  <meta name="description" content="Eskişehir Tepebaşı’nda satılık ve kiralık daireler, arsa ve ticari gayrimenkul seçenekleriyle güvenilir danışmanlık hizmeti sunuyoruz." />
+  <meta name="keywords" content="Eskişehir gayrimenkul, Tepebaşı emlak, satılık daire Eskişehir, arsa yatırımı, Yüz Yüze Gayrimenkul, konut alım satımı" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yuzyuzegayrimenkul.github.io/" />
+
+  <meta name="google-site-verification" content="ISYWcHCzm9r-IO06q8QXIin0JkeVG_h0NSff1HpycoI" />
+
+  <meta property="og:title" content="Yüz Yüze Gayrimenkul | Eskişehir Tepebaşı Emlak Ofisi" />
+  <meta property="og:description" content="Eskişehir Tepebaşı’nda satılık ve kiralık gayrimenkuller. Güvenilir danışmanlık hizmeti ile ev, arsa ve tarla alım satımında yanınızdayız." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yuzyuzegayrimenkul.github.io/" />
+  <meta property="og:image" content="https://yuzyuzegayrimenkul.github.io/images/og-image.jpg" />
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HT844J0XMJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HT844J0XMJ');
+  </script>
+
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #FFD700;
+      background-color: #000;
+      color: #ffd700;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
     }
     header {
-      background-color: #1c1c1c;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background-color: #111;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
     }
+    header p {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    /* Menü ve hamburger */
     nav {
-      display: flex;
-      gap: 1rem;
+      background-color: #222;
+      text-align: center;
+      padding: 10px 0;
     }
     nav a {
-      color: #FFD700;
+      color: #ffd700;
       text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s;
     }
+    nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Hamburger Menü Butonu */
     .menu-toggle {
       display: none;
-      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
       cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      width: 30px;
+      height: 25px;
+      justify-content: center;
+      z-index: 1100;
     }
     .menu-toggle span {
-      background: #FFD700;
+      display: block;
       height: 3px;
-      margin: 4px 0;
-      width: 25px;
+      background-color: #ffd700;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
+
+    /* Hamburger Menü açıkken animasyon */
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobil menü gizle/göster */
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
-        background-color: #1c1c1c;
+        background-color: #222;
         position: absolute;
-        top: 60px;
+        width: 100%;
+        top: 100%;
         left: 0;
-        right: 0;
-        padding: 1rem;
+        padding: 10px 0;
+        z-index: 1000;
       }
       nav.active {
         display: flex;
+      }
+      nav a {
+        margin: 10px 0;
+        font-size: 20px;
       }
       .menu-toggle {
         display: flex;
       }
     }
+
     main {
-      padding: 2rem;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 40px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #fff;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      color: #ffd700;
+      font-weight: 600;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .contact-info p, .social-links a {
+      color: #fff;
+      margin: 6px 0;
+    }
+    .social-links a {
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      text-decoration: none;
+      z-index: 1000;
+    }
+    .whatsapp-button svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+    .maps-button {
+      display: inline-block;
+      background-color: #004080;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    .maps-button:hover {
+      background-color: #003366;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Yüz Yüze Gayrimenkul</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
+    <h1>YÜZ YÜZE GAYRİMENKUL</h1>
+    <p>Eskişehir Tepebaşı'nda Yatırıma Açılan Kapınız</p>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Menüyü aç/kapat" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <nav id="nav-menu">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="blog.html">Blog</a>
-      <a href="iletisim.html">İletişim</a>
-      <a href="veri.html">İlanlarımız (Canlı Veri)</a>
-    </nav>
   </header>
 
+  <nav id="nav-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="blog.html">Blog</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="veri.html">İlanlarımız (Canlı Veri)</a>
+  </nav>
+
   <main>
-    <h1>Hoş Geldiniz</h1>
-    <p>Yüz Yüze Gayrimenkul - Eskişehir Tepebaşı'nda güvenilir emlak danışmanınız.</p>
-    <!-- Buraya ana sayfa içeriğiniz gelecek -->
+    <section>
+      <h2>Hakkımızda</h2>
+      <p>Yüz Yüze Gayrimenkul, 09.09.2021 tarihinde Eskişehir Tepebaşı’nda kurulmuştur. Güvenilir, şeffaf ve yüz yüze iletişimi ilke edinerek konut satışı, kiralama, arsa ve tarla alanlarında profesyonel hizmet sunmaktayız.</p>
+    </section>
+
+    <section>
+      <h2>Hizmetlerimiz</h2>
+      <ul>
+        <li>Satılık Konut</li>
+        <li>Kiralık Konut</li>
+        <li>Arsa Yatırımları</li>
+        <li>Tarla Alım-Satımı</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>İlanlarımız (Canlı Veri)</h2>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vReweu6HCpQYLq_pGbb-S513G4YYBNGxXJzvX_7AQ2fj5Sujor7hr9twCjfip0pgA/pubhtml?widget=true&amp;headers=false"></iframe>
+    </section>
+
+    <section>
+      <h2>İletişim</h2>
+      <div class="contact-info">
+        <p>📍 Eskişehir / Tepebaşı</p>
+        <p>📞 0545 530 26 00</p>
+        <p>📧 yuzyuzegayrimenkul@gmail.com</p>
+      </div>
+      <div class="social-links">
+        <a href="https://instagram.com/serkan_gecher" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="https://facebook.com/YuzYuzeGayrimenkul26" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </div>
+      <p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" 
+           target="_blank" rel="noopener noreferrer" class="maps-button">
+          Google Haritalar'da Gör
+        </a>
+      </p>
+    </section>
+
+    <section>
+      <h2>🤖 Emlak Asistanına Sor</h2>
+      <p>Ev mi arıyorsunuz? Tepebaşı'nda size uygun daireleri hızlıca bulmamı ister misiniz?<br>
+         Aşağıdaki bağlantıya tıklayın, WhatsApp üzerinden bizimle konuşmaya başlayın:</p>
+      <a href="https://wa.me/905455302600?text=Merhaba%2C%20Tepeba%C5%9F%C4%B1'nda%201%2B1%20veya%202%2B1%20kiral%C4%B1k%20daire%20aray%C4%B1%C5%9F%C4%B1m%20var." 
+         target="_blank" class="maps-button">
+        WhatsApp'ta Emlak Asistanı 🚀
+      </a>
+      <p style="margin-top:10px; font-size:14px;">
+        💡 Sohbete hazır bir mesajla başlayın:<br>
+        📍 Tepebaşı<br>
+        🏠 1+1 / 2+1 / 3+1<br>
+        💰 Bütçe<br>
+        🔄 Satılık mı, kiralık mı?
+      </p>
+    </section>
   </main>
 
+  <footer>
+    © 2025 Yüz Yüze Gayrimenkul. Tüm hakları saklıdır.
+  </footer>
+
+  <!-- WhatsApp Butonu -->
+  <a href="https://wa.me/905455302600" target="_blank" class="whatsapp-button" aria-label="WhatsApp ile iletişime geç">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20.52 3.48a11.933 11.933 0 0 0-17.04 0 11.933 11.933 0 0 0 0 17.04l-1.84 5.36 5.52-1.52a11.933 11.933 0 0 0 5.52 1.28c6.62 0 12-5.38 12-12a11.933 11.933 0 0 0-5.6-10.6zm-7.04 15.52c-1.12 0-2.22-.3-3.2-.9l-.22-.12-3.04.84.84-3.04-.12-.22c-.6-.98-.9-2.08-.9-3.2 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/>
+    </svg>
+  </a>
+
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav-menu');
-      nav.classList.toggle('active');
-    }
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Klavyeden Enter veya Boşluk tuşları ile de menüyü aç/kapat yapabilmek için:
+    menuToggle.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
   </script>
 </body>
 </html>
