@@ -1,121 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Yüz Yüze Gayrimenkul Portföy</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f9f9f9;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #ffd700;
-      color: #000;
-    }
-    tr:nth-child(even) {
       background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 0;
     }
-    tr:hover {
-      background-color: #f1f1f1;
-    }
-    input, select {
-      padding: 5px;
-      margin: 5px 10px 15px 0;
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <h2>Filtrelenebilir İlanlar</h2>
-
-  <label>Mahalle: 
-    <input type="text" id="mahalleInput" onkeyup="filterTable()">
-  </label>
-  <label>Oda: 
-    <input type="text" id="odaInput" onkeyup="filterTable()">
-  </label>
-  <label>Durum: 
-    <select id="durumInput" onchange="filterTable()">
-      <option value="">Tümü</option>
-      <option value="Satılık">Satılık</option>
-      <option value="Kiralık">Kiralık</option>
-    </select>
-  </label>
-  <label>Maksimum Fiyat: 
-    <input type="number" id="fiyatInput" onkeyup="filterTable()">
-  </label>
-
-  <table id="ilanTablosu">
-    <thead>
-      <tr>
-        <th>Mahalle</th>
-        <th>Oda</th>
-        <th>Durum</th>
-        <th>Fiyat</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Batıkent</td>
-        <td>2+1</td>
-        <td>Satılık</td>
-        <td>2500000</td>
-        <td><a href="https://www.emlakjet.com/ilan/12345678" target="_blank">İlana Git</a></td>
-      </tr>
-      <tr>
-        <td>Sütlüce</td>
-        <td>1+1</td>
-        <td>Kiralık</td>
-        <td>11000</td>
-        <td><a href="https://www.emlakjet.com/ilan/23456789" target="_blank">İlana Git</a></td>
-      </tr>
-      <tr>
-        <td>Şirintepe</td>
-        <td>3+1</td>
-        <td>Satılık</td>
-        <td>3300000</td>
-        <td><a href="https://www.emlakjet.com/ilan/98765432" target="_blank">İlana Git</a></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <script>
-    function filterTable() {
-      const mahalle = document.getElementById("mahalleInput").value.toLowerCase();
-      const oda = document.getElementById("odaInput").value.toLowerCase();
-      const durum = document.getElementById("durumInput").value.toLowerCase();
-      const maxFiyat = parseInt(document.getElementById("fiyatInput").value) || Infinity;
-
-      const table = document.getElementById("ilanTablosu");
-      const tr = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < tr.length; i++) {
-        const tds = tr[i].getElementsByTagName("td");
-        const mahalleText = tds[0].textContent.toLowerCase();
-        const odaText = tds[1].textContent.toLowerCase();
-        const durumText = tds[2].textContent.toLowerCase();
-        const fiyat = parseInt(tds[3].textContent.replace(/[^\d]/g, "")) || 0;
-
-        const matches =
-          mahalleText.includes(mahalle) &&
-          odaText.includes(oda) &&
-          durumText.includes(durum) &&
-          fiyat <= maxFiyat;
-
-        tr[i].style.display = matches ? "" : "none";
-      }
-    }
-  </script>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vReweu6HCpQYLq_pGbb-S513G4YYBNGxXJzvX_7AQ2fj5Sujor7hr9twCjfip0pgA/pubhtml?widget=true&amp;headers=false"></iframe>
 </body>
 </html>
