@@ -1,121 +1,113 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Yüz Yüze Gayrimenkul Portföy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eskişehir Tepebaşı Gayrimenkul | Yüz Yüze Gayrimenkul</title>
+  <meta name="description" content="Eskişehir Tepebaşı’nda satılık ve kiralık daireler, arsa ve ticari gayrimenkul seçenekleriyle güvenilir danışmanlık hizmeti sunuyoruz." />
+  <meta name="keywords" content="Eskişehir gayrimenkul, Tepebaşı emlak, satılık daire Eskişehir, arsa yatırımı, Yüz Yüze Gayrimenkul, konut alım satımı" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f9f9f9;
+      background-color: #000;
+      color: #ffd700;
+      margin: 0;
+      padding: 0;
     }
-    table {
-      border-collapse: collapse;
+    header {
+      background-color: #111;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      color: #fff;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #fff;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      font-weight: 600;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    iframe {
       width: 100%;
+      height: 720px;
+      border: none;
       margin-top: 20px;
     }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
     }
-    th {
-      background-color: #ffd700;
-      color: #000;
+    .maps-button {
+      display: inline-block;
+      background-color: #004080;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
     }
-    tr:nth-child(even) {
-      background-color: #fff;
-    }
-    tr:hover {
-      background-color: #f1f1f1;
-    }
-    input, select {
-      padding: 5px;
-      margin: 5px 10px 15px 0;
+    .maps-button:hover {
+      background-color: #003366;
     }
   </style>
 </head>
 <body>
-  <h2>Filtrelenebilir İlanlar</h2>
+  <header>
+    <h1>YÜZ YÜZE GAYRİMENKUL</h1>
+    <p>Eskişehir Tepebaşı'nda Yatırıma Açılan Kapınız</p>
+  </header>
 
-  <label>Mahalle: 
-    <input type="text" id="mahalleInput" onkeyup="filterTable()">
-  </label>
-  <label>Oda: 
-    <input type="text" id="odaInput" onkeyup="filterTable()">
-  </label>
-  <label>Durum: 
-    <select id="durumInput" onchange="filterTable()">
-      <option value="">Tümü</option>
-      <option value="Satılık">Satılık</option>
-      <option value="Kiralık">Kiralık</option>
-    </select>
-  </label>
-  <label>Maksimum Fiyat: 
-    <input type="number" id="fiyatInput" onkeyup="filterTable()">
-  </label>
+  <main>
+    <section>
+      <h2>Hakkımızda</h2>
+      <p>Yüz Yüze Gayrimenkul, 09.09.2021 tarihinde Eskişehir Tepebaşı’nda kurulmuştur. Güvenilir, şeffaf ve yüz yüze iletişimi ilke edinerek konut satışı, kiralama, arsa ve tarla alanlarında profesyonel hizmet sunmaktayız.</p>
+    </section>
 
-  <table id="ilanTablosu">
-    <thead>
-      <tr>
-        <th>Mahalle</th>
-        <th>Oda</th>
-        <th>Durum</th>
-        <th>Fiyat</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Batıkent</td>
-        <td>2+1</td>
-        <td>Satılık</td>
-        <td>2500000</td>
-        <td><a href="https://www.emlakjet.com/ilan/12345678" target="_blank">İlana Git</a></td>
-      </tr>
-      <tr>
-        <td>Sütlüce</td>
-        <td>1+1</td>
-        <td>Kiralık</td>
-        <td>11000</td>
-        <td><a href="https://www.emlakjet.com/ilan/23456789" target="_blank">İlana Git</a></td>
-      </tr>
-      <tr>
-        <td>Şirintepe</td>
-        <td>3+1</td>
-        <td>Satılık</td>
-        <td>3300000</td>
-        <td><a href="https://www.emlakjet.com/ilan/98765432" target="_blank">İlana Git</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <section>
+      <h2>İlanlarımız (Filtreleyerek İnceleyin)</h2>
+      <iframe src="https://yuzyuzegayrimenkul.github.io/veri.html" title="Filtrelenebilir İlanlar"></iframe>
+    </section>
 
-  <script>
-    function filterTable() {
-      const mahalle = document.getElementById("mahalleInput").value.toLowerCase();
-      const oda = document.getElementById("odaInput").value.toLowerCase();
-      const durum = document.getElementById("durumInput").value.toLowerCase();
-      const maxFiyat = parseInt(document.getElementById("fiyatInput").value) || Infinity;
+    <section>
+      <h2>İletişim</h2>
+      <ul>
+        <li>📍 Eskişehir / Tepebaşı</li>
+        <li>📞 0545 530 26 00</li>
+        <li>📧 yuzyuzegayrimenkul@gmail.com</li>
+      </ul>
+      <a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" class="maps-button" target="_blank">Haritada Gör</a>
+    </section>
+  </main>
 
-      const table = document.getElementById("ilanTablosu");
-      const tr = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < tr.length; i++) {
-        const tds = tr[i].getElementsByTagName("td");
-        const mahalleText = tds[0].textContent.toLowerCase();
-        const odaText = tds[1].textContent.toLowerCase();
-        const durumText = tds[2].textContent.toLowerCase();
-        const fiyat = parseInt(tds[3].textContent.replace(/[^\d]/g, "")) || 0;
-
-        const matches =
-          mahalleText.includes(mahalle) &&
-          odaText.includes(oda) &&
-          durumText.includes(durum) &&
-          fiyat <= maxFiyat;
-
-        tr[i].style.display = matches ? "" : "none";
-      }
-    }
-  </script>
+  <footer>
+    © 2025 Yüz Yüze Gayrimenkul. Tüm hakları saklıdır.
+  </footer>
 </body>
 </html>
