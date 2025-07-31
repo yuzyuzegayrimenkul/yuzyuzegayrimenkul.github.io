@@ -36,24 +36,36 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    .contact-info p {
-      font-size: 18px;
-      margin: 12px 0;
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
     }
-    .maps-button {
-      display: inline-block;
-      background-color: #004080;
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #25D366;
       color: white;
-      padding: 10px 18px;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
       border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease;
-      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
     }
-    .maps-button:hover {
-      background-color: #003366;
+    button:hover {
+      background-color: #1ebe5d;
     }
   </style>
 </head>
@@ -67,15 +79,37 @@
 
   <main>
     <h1>İletişim</h1>
-    <div class="contact-info">
-      <p>📍 Eskişehir / Tepebaşı</p>
-      <p>📞 0545 530 26 00</p>
-      <p>📧 yuzyuzegayrimenkul@gmail.com</p>
-    </div>
-    <a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" 
-       target="_blank" class="maps-button" rel="noopener noreferrer">
-      Google Haritalar'da Gör
-    </a>
+
+    <form id="contactForm">
+      <label for="name">İsim</label>
+      <input type="text" id="name" name="name" placeholder="Adınız" required />
+
+      <label for="phone">Telefon</label>
+      <input type="tel" id="phone" name="phone" placeholder="05xx xxx xx xx" required pattern="[0-9\s\-\+]{10,15}" />
+
+      <label for="message">Açıklama</label>
+      <textarea id="message" name="message" placeholder="Mesajınız..." required></textarea>
+
+      <button type="submit">Gönder</button>
+    </form>
   </main>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
+      const message = encodeURIComponent(document.getElementById('message').value.trim());
+
+      const whatsappNumber = '905455302600'; // Kendi WhatsApp numaranı burada kullan
+
+      const text = `Merhaba,%0Aİsim: ${name}%0ATelefon: ${phone}%0AMesaj: ${message}`;
+
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+      window.open(whatsappURL, '_blank');
+    });
+  </script>
 </body>
 </html>
