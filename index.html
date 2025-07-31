@@ -60,10 +60,20 @@
       position: relative;
       z-index: 10;
     }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
     nav a {
       color: #ffd700;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: 600;
       font-size: 18px;
       transition: color 0.3s;
@@ -91,31 +101,29 @@
       nav {
         padding: 0;
       }
-      nav a {
-        display: block;
-        margin: 10px 0;
-        font-size: 20px;
-      }
-      .menu-toggle {
-        display: block;
-      }
       nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      nav ul.hidden {
+        flex-direction: column;
         display: none;
-      }
-      nav ul.visible {
-        display: block;
         background-color: #222;
         position: fixed;
-        top: 60px; /* header + biraz boşluk */
+        top: 60px; /* header yüksekliği + boşluk */
         left: 0;
         width: 100%;
         padding: 10px 0;
         z-index: 15;
+      }
+      nav ul.visible {
+        display: flex;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      nav a {
+        font-size: 20px;
+        margin: 0;
+      }
+      .menu-toggle {
+        display: block;
       }
     }
     main {
@@ -294,16 +302,11 @@
     // Menü açma/kapatma işlemi
     document.addEventListener('DOMContentLoaded', function () {
       const menuToggle = document.querySelector('.menu-toggle');
-      const menuList = document.getElementById('menu-list');
+      const menuList = document.querySelector('nav ul');
 
       menuToggle.addEventListener('click', function () {
-        if(menuList.classList.contains('hidden')) {
-          menuList.classList.remove('hidden');
-          menuList.classList.add('visible');
-        } else {
-          menuList.classList.remove('visible');
-          menuList.classList.add('hidden');
-        }
+        menuList.classList.toggle('visible');
+        menuList.classList.toggle('hidden');
       });
     });
   </script>
