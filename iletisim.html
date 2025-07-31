@@ -4,21 +4,119 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>İletişim Formu - WhatsApp'a Gönder</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f1c40f;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f1c40f88;
+    max-width: 400px;
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f1c40f;
+    border-radius: 6px;
+    background-color: #121212;
+    color: #f1c40f;
+    font-size: 16px;
+    resize: vertical;
+  }
+  input[type="text"]::placeholder,
+  input[type="tel"]::placeholder,
+  textarea::placeholder {
+    color: #f1c40faa;
+  }
+  textarea {
+    min-height: 100px;
+  }
+  button {
+    width: 100%;
+    background-color: #f1c40f;
+    color: #121212;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #d4b90f;
+  }
+  .back-link {
+    display: block;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color: #f1c40f;
+    text-decoration: none;
+    border: 2px solid #f1c40f;
+    padding: 8px 15px;
+    border-radius: 6px;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+  }
+  .back-link:hover {
+    background-color: #f1c40f;
+    color: #121212;
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+    .container {
+      padding: 20px;
+    }
+    button {
+      font-size: 16px;
+    }
+  }
+</style>
 </head>
 <body>
-  <h1>İletişim Formu</h1>
-  <form id="whatsappForm">
-    <label for="isim">İsim:</label><br />
-    <input type="text" id="isim" name="isim" required /><br /><br />
+  <div class="container">
+    <h1>İletişim Formu</h1>
+    <form id="whatsappForm">
+      <label for="isim">İsim:</label>
+      <input type="text" id="isim" name="isim" placeholder="Adınızı giriniz" required />
 
-    <label for="telefon">Telefon:</label><br />
-    <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10,15}" placeholder="0555 555 5555" required /><br /><br />
+      <label for="telefon">Telefon:</label>
+      <input type="tel" id="telefon" name="telefon" placeholder="0555 555 5555" pattern="[0-9]{10,15}" required />
 
-    <label for="aciklama">Açıklama:</label><br />
-    <textarea id="aciklama" name="aciklama" rows="4" required></textarea><br /><br />
+      <label for="aciklama">Açıklama:</label>
+      <textarea id="aciklama" name="aciklama" placeholder="Mesajınızı yazınız" required></textarea>
 
-    <button type="submit">Gönder</button>
-  </form>
+      <button type="submit">Gönder</button>
+    </form>
+
+    <a href="index.html" class="back-link">Ana Sayfaya Dön</a>
+  </div>
 
   <script>
     const form = document.getElementById('whatsappForm');
