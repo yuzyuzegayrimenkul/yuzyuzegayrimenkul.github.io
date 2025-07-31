@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>İletişim</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>İletişim Formu - WhatsApp'a Gönder</title>
 </head>
 <body>
-  <h1>İletişim Formu Test</h1>
-  <form id="contactForm">
-    <label>İsim: <input type="text" id="name" required /></label><br /><br />
-    <label>Telefon: <input type="tel" id="phone" required /></label><br /><br />
-    <label>Açıklama:<br />
-      <textarea id="message" required></textarea>
-    </label><br /><br />
+  <h1>İletişim Formu</h1>
+  <form id="whatsappForm">
+    <label for="isim">İsim:</label><br />
+    <input type="text" id="isim" name="isim" required /><br /><br />
+
+    <label for="telefon">Telefon:</label><br />
+    <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10,15}" placeholder="0555 555 5555" required /><br /><br />
+
+    <label for="aciklama">Açıklama:</label><br />
+    <textarea id="aciklama" name="aciklama" rows="4" required></textarea><br /><br />
+
     <button type="submit">Gönder</button>
   </form>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('name').value.trim());
-      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
-      const message = encodeURIComponent(document.getElementById('message').value.trim());
-      const whatsappNumber = '905455302600';
-      const text = `Merhaba,%0Aİsim: ${name}%0ATelefon: ${phone}%0AMesaj: ${message}`;
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${text}`;
-      window.open(whatsappURL, '_blank');
+    const form = document.getElementById('whatsappForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const isim = document.getElementById('isim').value.trim();
+      const telefon = document.getElementById('telefon').value.trim();
+      const aciklama = document.getElementById('aciklama').value.trim();
+
+      if (!isim || !telefon || !aciklama) {
+        alert('Lütfen tüm alanları doldurun.');
+        return;
+      }
+
+      const whatsappNumarasi = '905455302600';
+
+      const mesaj = `Merhaba, yeni bir iletişim talebi var:%0Aİsim: ${isim}%0ATelefon: ${telefon}%0AAçıklama: ${aciklama}`;
+
+      const url = `https://wa.me/${whatsappNumarasi}?text=${mesaj}`;
+
+      window.open(url, '_blank');
     });
   </script>
 </body>
