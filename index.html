@@ -1,193 +1,121 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Eskişehir Tepebaşı Gayrimenkul | Yüz Yüze Gayrimenkul</title>
-  
-  <meta name="description" content="Eskişehir Tepebaşı’nda satılık ve kiralık daireler, arsa ve ticari gayrimenkul seçenekleriyle güvenilir danışmanlık hizmeti sunuyoruz." />
-  <meta name="keywords" content="Eskişehir gayrimenkul, Tepebaşı emlak, satılık daire Eskişehir, arsa yatırımı, Yüz Yüze Gayrimenkul, konut alım satımı" />
-
-  <meta name="google-site-verification" content="ISYWcHCzm9r-IO06q8QXIin0JkeVG_h0NSff1HpycoI" />
-
-  <meta property="og:title" content="Yüz Yüze Gayrimenkul | Eskişehir Tepebaşı Emlak Ofisi" />
-  <meta property="og:description" content="Eskişehir Tepebaşı’nda satılık ve kiralık gayrimenkuller. Güvenilir danışmanlık hizmeti ile ev, arsa ve tarla alım satımında yanınızdayız." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yuzyuzegayrimenkul.github.io/" />
-  <meta property="og:image" content="https://yuzyuzegayrimenkul.github.io/images/og-image.jpg" />
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
+  <meta charset="UTF-8">
+  <title>Yüz Yüze Gayrimenkul Portföy</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #ffd700;
-      margin: 0;
-      padding: 0;
-      line-height: 1.5;
-    }
-    header {
-      background-color: #111;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 18px;
-      color: #fff;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px 40px;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #fff;
-      border-bottom: 2px solid #ffd700;
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      color: #ffd700;
-      font-weight: 600;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    .contact-info p, .social-links a {
-      color: #fff;
-      margin: 6px 0;
-    }
-    .social-links a {
-      margin-right: 15px;
-      text-decoration: none;
-    }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      background-color: #111;
-      text-align: center;
       padding: 20px;
-      font-size: 14px;
-      color: #777;
+      background: #f9f9f9;
     }
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      text-decoration: none;
-      z-index: 1000;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
     }
-    .whatsapp-button svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
     }
-    .maps-button {
-      display: inline-block;
-      background-color: #004080;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease;
-      margin-top: 10px;
+    th {
+      background-color: #ffd700;
+      color: #000;
     }
-    .maps-button:hover {
-      background-color: #003366;
+    tr:nth-child(even) {
+      background-color: #fff;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    input, select {
+      padding: 5px;
+      margin: 5px 10px 15px 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>YÜZ YÜZE GAYRİMENKUL</h1>
-    <p>Eskişehir Tepebaşı'nda Yatırıma Açılan Kapınız</p>
-  </header>
+  <h2>Filtrelenebilir İlanlar</h2>
 
-  <main>
-    <section>
-      <h2>Hakkımızda</h2>
-      <p>Yüz Yüze Gayrimenkul, 09.09.2021 tarihinde Eskişehir Tepebaşı’nda kurulmuştur. Güvenilir, şeffaf ve yüz yüze iletişimi ilke edinerek konut satışı, kiralama, arsa ve tarla alanlarında profesyonel hizmet sunmaktayız.</p>
-    </section>
+  <label>Mahalle: 
+    <input type="text" id="mahalleInput" onkeyup="filterTable()">
+  </label>
+  <label>Oda: 
+    <input type="text" id="odaInput" onkeyup="filterTable()">
+  </label>
+  <label>Durum: 
+    <select id="durumInput" onchange="filterTable()">
+      <option value="">Tümü</option>
+      <option value="Satılık">Satılık</option>
+      <option value="Kiralık">Kiralık</option>
+    </select>
+  </label>
+  <label>Maksimum Fiyat: 
+    <input type="number" id="fiyatInput" onkeyup="filterTable()">
+  </label>
 
-    <section>
-      <h2>Hizmetlerimiz</h2>
-      <ul>
-        <li>Satılık Konut</li>
-        <li>Kiralık Konut</li>
-        <li>Arsa Yatırımları</li>
-        <li>Tarla Alım-Satımı</li>
-      </ul>
-    </section>
+  <table id="ilanTablosu">
+    <thead>
+      <tr>
+        <th>Mahalle</th>
+        <th>Oda</th>
+        <th>Durum</th>
+        <th>Fiyat</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Batıkent</td>
+        <td>2+1</td>
+        <td>Satılık</td>
+        <td>2500000</td>
+        <td><a href="https://www.emlakjet.com/ilan/12345678" target="_blank">İlana Git</a></td>
+      </tr>
+      <tr>
+        <td>Sütlüce</td>
+        <td>1+1</td>
+        <td>Kiralık</td>
+        <td>11000</td>
+        <td><a href="https://www.emlakjet.com/ilan/23456789" target="_blank">İlana Git</a></td>
+      </tr>
+      <tr>
+        <td>Şirintepe</td>
+        <td>3+1</td>
+        <td>Satılık</td>
+        <td>3300000</td>
+        <td><a href="https://www.emlakjet.com/ilan/98765432" target="_blank">İlana Git</a></td>
+      </tr>
+    </tbody>
+  </table>
 
-    <section>
-      <h2>İletişim</h2>
-      <div class="contact-info">
-        <p>📍 Eskişehir / Tepebaşı</p>
-        <p>📞 0545 530 26 00</p>
-        <p>📧 yuzyuzegayrimenkul@gmail.com</p>
-      </div>
-      <div class="social-links">
-        <a href="https://instagram.com/serkan_gecher" target="_blank" rel="noopener noreferrer">Instagram</a> |
-        <a href="https://facebook.com/YuzYuzeGayrimenkul26" target="_blank" rel="noopener noreferrer">Facebook</a>
-      </div>
-      <p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" 
-           target="_blank" rel="noopener noreferrer" class="maps-button">
-          Google Haritalar'da Gör
-        </a>
-      </p>
-    </section>
+  <script>
+    function filterTable() {
+      const mahalle = document.getElementById("mahalleInput").value.toLowerCase();
+      const oda = document.getElementById("odaInput").value.toLowerCase();
+      const durum = document.getElementById("durumInput").value.toLowerCase();
+      const maxFiyat = parseInt(document.getElementById("fiyatInput").value) || Infinity;
 
-    <section>
-      <h2>🤖 Emlak Asistanına Sor</h2>
-      <p>Ev mi arıyorsunuz? Tepebaşı'nda size uygun daireleri hızlıca bulmamı ister misiniz?<br>
-         Aşağıdaki bağlantıya tıklayın, WhatsApp üzerinden bizimle konuşmaya başlayın:</p>
-      <a href="https://wa.me/905455302600?text=Merhaba%2C%20Tepeba%C5%9F%C4%B1'nda%201%2B1%20veya%202%2B1%20kiral%C4%B1k%20daire%20aray%C4%B1%C4%B1m%20var." 
-         target="_blank" class="maps-button">
-        WhatsApp'ta Emlak Asistanı 🚀
-      </a>
-      <p style="margin-top:10px; font-size:14px;">
-        💡 Sohbete hazır bir mesajla başlayın:<br>
-        📍 Tepebaşı<br>
-        🏠 1+1 / 2+1 / 3+1<br>
-        💰 Bütçe<br>
-        🔄 Satılık mı, kiralık mı?
-      </p>
-    </section>
-  </main>
+      const table = document.getElementById("ilanTablosu");
+      const tr = table.getElementsByTagName("tr");
 
-  <footer>
-    © 2025 Yüz Yüze Gayrimenkul. Tüm hakları saklıdır.
-  </footer>
+      for (let i = 1; i < tr.length; i++) {
+        const tds = tr[i].getElementsByTagName("td");
+        const mahalleText = tds[0].textContent.toLowerCase();
+        const odaText = tds[1].textContent.toLowerCase();
+        const durumText = tds[2].textContent.toLowerCase();
+        const fiyat = parseInt(tds[3].textContent.replace(/[^\d]/g, "")) || 0;
 
-  <!-- WhatsApp Butonu -->
-  <a href="https://wa.me/905455302600" target="_blank" class="whatsapp-button" aria-label="WhatsApp ile iletişime geç">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M20.52 3.48a11.933 11.933 0 0 0-17.04 0 11.933 11.933 0 0 0 0 17.04l-1.84 5.36 5.52-1.52a11.933 11.933 0 0 0 5.52 1.28c6.62 0 12-5.38 12-12a11.933 11.933 0 0 0-5.6-10.6zm-7.04 15.52c-1.12 0-2.22-.3-3.2-.9l-.22-.12-3.04.84.84-3.04-.12-.22c-.6-.98-.9-2.08-.9-3.2 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/>
-    </svg>
-  </a>
+        const matches =
+          mahalleText.includes(mahalle) &&
+          odaText.includes(oda) &&
+          durumText.includes(durum) &&
+          fiyat <= maxFiyat;
+
+        tr[i].style.display = matches ? "" : "none";
+      }
+    }
+  </script>
 </body>
 </html>
