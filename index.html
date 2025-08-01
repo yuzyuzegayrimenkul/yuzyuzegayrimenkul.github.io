@@ -209,129 +209,80 @@
       border: none;
       margin-top: 20px;
     }
-    .contact-row, .working-hours-row, .ready-message-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .contact-row p,
-    .working-hours-row p {
-      margin: 0;
-      white-space: nowrap;
-      color: #ffd700;
-      font-weight: 600;
-    }
-    .social-link {
-      color: #ffd700;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-    .social-link:hover {
-      text-decoration: underline;
-    }
-    .maps-button {
-      background-color: #004080;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease;
-    }
-    .maps-button:hover {
-      background-color: #003366;
-    }
-    .ready-message-row span {
-      background-color: #ffd70033;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 14px;
-      color: #ffd700;
-      white-space: nowrap;
-    }
-    /* Mobilde alt alta sıralama için */
-    @media (max-width: 768px) {
-      .contact-row, .working-hours-row, .ready-message-row {
-        flex-direction: column;
-        gap: 8px;
-        align-items: flex-start;
-      }
-    }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Yüz Yüze Gayrimenkul",
-    "image": "https://yuzyuzegayrimenkul.github.io/logotek.png",
-    "telephone": "+90 545 530 26 00",
-    "email": "yuzyuzegayrimenkul@gmail.com",
-    "url": "https://yuzyuzegayrimenkul.github.io/",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Sütlüce Mh. İstiklal Cd. No:48",
-      "addressLocality": "Tepebaşı",
-      "addressRegion": "Eskişehir",
-      "postalCode": "26010",
-      "addressCountry": "TR"
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Yüz Yüze Gayrimenkul",
+  "image": "https://yuzyuzegayrimenkul.github.io/logotek.png",
+  "telephone": "+90 545 530 26 00",
+  "email": "yuzyuzegayrimenkul@gmail.com",
+  "url": "https://yuzyuzegayrimenkul.github.io/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sütlüce Mh. İstiklal Cd. No:48",
+    "addressLocality": "Tepebaşı",
+    "addressRegion": "Eskişehir",
+    "postalCode": "26010",
+    "addressCountry": "TR"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "10:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "11:00",
-        "closes": "17:00"
-      }
-    ]
-  }
-  </script>
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "17:00"
+    }
+  ]
+}
+</script>
+
+
+
 
 </head>
 <body>
   <header style="background-color: #111; text-align: center; padding: 40px 20px;">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <a href="index.html">
-        <img src="logotek.png" alt="Yüz Yüze Gayrimenkul Logo" style="height: 90px; border-radius: 8px;">
-      </a>
-      <div>
-        <h1 style="margin: 0; font-size: 28px;">YÜZ YÜZE GAYRİMENKUL - TEPEBAŞI EMLAK OFİSİ</h1>
-        <p style="margin: 5px 0 0; color: #fff;">Ev Değil Mutluluk Satıyoruz</p>
-      </div>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <a href="index.html">
+      <img src="logotek.png" alt="Yüz Yüze Gayrimenkul Logo" style="height: 90px; border-radius: 8px;">
+    </a>
+    <div>
+      <h1 style="margin: 0; font-size: 28px;">YÜZ YÜZE GAYRİMENKUL - TEPEBAŞI EMLAK OFİSİ</h1>
+      <p style="margin: 5px 0 0; color: #fff;">Ev Değil Mutluluk Satıyoruz</p>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Menü Başlangıcı -->
-  <nav>
-    <button class="menu-toggle" aria-label="Menüyü aç/kapa">☰</button>
-    <ul class="hidden" id="menu-list">
-      <li><a href="index.html">Ana Sayfa</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="iletisim.html">Bize Ulaşın</a></li>
-      <li><a href="veri.html">İlanlarımız (Canlı Veri)</a></li>
-    </ul>
-  </nav>
+ <nav>
+  <button class="menu-toggle" aria-label="Menüyü aç/kapa">☰</button>
+  <ul class="hidden" id="menu-list">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="iletisim.html">Bize Ulaşın</a></li>
+    <li><a href="veri.html">İlanlarımız (Canlı Veri)</a></li>
+  </ul>
+</nav>
   <!-- Menü Bitişi -->
 
   <main>
@@ -355,47 +306,47 @@
       <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vReweu6HCpQYLq_pGbb-S513G4YYBNGxXJzvX_7AQ2fj5Sujor7hr9twCjfip0pgA/pubhtml?widget=true&amp;headers=false"></iframe>
     </section>
 
-    <!-- Sadece bir adet İletişim bölümü -->
     <section>
       <h2>İletişim</h2>
-      <div class="contact-row">
+      <div class="contact-info">
         <p>📍 Eskişehir / Tepebaşı</p>
         <p>📞 0545 530 26 00</p>
         <p>📧 yuzyuzegayrimenkul@gmail.com</p>
-        <p>
-          <a href="https://instagram.com/serkan_gecher" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a> |
-          <a href="https://facebook.com/YuzYuzeGayrimenkul26" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
-        </p>
-        <p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" target="_blank" rel="noopener noreferrer" class="maps-button">
-            Google Haritalar'da Gör
-          </a>
-        </p>
       </div>
-    </section>
-
-    <section>
-      <h2>⌛ Çalışma Saatlerimiz</h2>
-      <div class="working-hours-row">
-        <p>Pazartesi - Cuma: 09:00 - 19:00</p>
-        <p>Cumartesi: 10:00 - 17:00</p>
-        <p>Pazar: 11:00 - 17:00</p>
+      <div class="social-links">
+        <a href="https://instagram.com/serkan_gecher" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="https://facebook.com/YuzYuzeGayrimenkul26" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
+      <p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Sütlüce+Mh.+İstiklal+Cd.+No:48+Eskişehir+Tepebaşı" 
+           target="_blank" rel="noopener noreferrer" class="maps-button">
+          Google Haritalar'da Gör
+        </a>
+      </p>
     </section>
-
+<section>
+  <h2>⌛ Çalışma Saatlerimiz</h2>
+  <ul>
+    <li>Pazartesi - Cuma: 09:00 - 19:00</li>
+    <li>Cumartesi: 10:00 - 17:00</li>
+    <li>Pazar: 11:00 - 17:00</li>
+  </ul>
+</section>
     <section>
       <h2>🤖 Emlak Asistanına Sor</h2>
       <p>Ev mi arıyorsunuz? Tepebaşı'nda size uygun daireleri hızlıca bulmamı ister misiniz?<br>
-      Aşağıdaki bağlantıya tıklayın, WhatsApp üzerinden bizimle konuşmaya başlayın:</p>
-      <a href="https://wa.me/905455302600?text=Merhaba%20Serkan%20Bey%2C%20Tepeba%C5%9F%C4%B1'nda%20sat%C4%B1l%C4%B1k%20daire%20ar%C4%B1yorum.%20Yard%C4%B1mc%C4%B1%20olabilir%20misiniz%3F" target="_blank" class="maps-button">
+         Aşağıdaki bağlantıya tıklayın, WhatsApp üzerinden bizimle konuşmaya başlayın:</p>
+      <a href="https://wa.me/905455302600?text=Merhaba%20Serkan%20Bey%2C%20Tepeba%C5%9F%C4%B1'nda%20sat%C4%B1l%C4%B1k%20daire%20ar%C4%B1yorum.%20Yard%C4%B1mc%C4%B1%20olabilir%20misiniz%3F" 
+         target="_blank" class="maps-button">
         WhatsApp'ta Emlak Asistanı 🚀
       </a>
-      <div class="ready-message-row">
-        <span>📍 Tepebaşı</span>
-        <span>🏠 1+1 / 2+1 / 3+1</span>
-        <span>💰 Bütçe</span>
-        <span>🔄 Satılık mı, kiralık mı?</span>
-      </div>
+      <p style="margin-top:10px; font-size:14px;">
+        💡 Sohbete hazır bir mesajla başlayın:<br>
+        📍 Tepebaşı<br>
+        🏠 1+1 / 2+1 / 3+1<br>
+        💰 Bütçe<br>
+        🔄 Satılık mı, kiralık mı?
+      </p>
     </section>
   </main>
 
