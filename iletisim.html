@@ -108,7 +108,7 @@
       <input type="text" id="isim" name="isim" placeholder="Adınızı giriniz" required />
 
       <label for="telefon">Telefon:</label>
-      <input type="tel" id="telefon" name="telefon" placeholder="0555 555 5555" pattern="[0-9]{10,15}" required />
+      <input type="tel" id="telefon" name="telefon" placeholder="0555 555 5555 veya +905555555555" pattern="(\+90|0)?[0-9]{10}" required />
 
       <label for="aciklama">Açıklama:</label>
       <textarea id="aciklama" name="aciklama" placeholder="Mesajınızı yazınız" required></textarea>
@@ -135,11 +135,12 @@
 
       const whatsappNumarasi = '905455302600';
 
-      const mesaj = `Merhaba, yeni bir iletişim talebi var:%0Aİsim: ${isim}%0ATelefon: ${telefon}%0AAçıklama: ${aciklama}`;
+      const mesaj = `Merhaba, yeni bir iletişim talebi var:\nİsim: ${isim}\nTelefon: ${telefon}\nAçıklama: ${aciklama}`;
 
-      const url = `https://wa.me/${whatsappNumarasi}?text=${mesaj}`;
+      const url = `https://wa.me/${whatsappNumarasi}?text=${encodeURIComponent(mesaj)}`;
 
       window.open(url, '_blank');
+      form.reset();
     });
   </script>
 </body>
